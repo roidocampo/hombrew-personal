@@ -1,1 +1,3 @@
-# hombrew-personal
+# roidocampo/hombrew-personal
+
+Personal Homebrew Tap
