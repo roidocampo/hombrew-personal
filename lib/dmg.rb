@@ -17,13 +17,15 @@ class Dmg
     def attach
         cmd = %w[hdiutil attach -nobrowse -readonly -noidme -mountrandom /tmp]
         cmd.push(@dmg_path)
-        IO.popen(cmd, "r") do |pipe|
+        IO.popen(cmd, "r+") do |pipe|
             while line = pipe.gets
                 d,t,v = line.split(/\s+/, 3)
-                v = v.chomp
+                if d == "Agree" then
+                    pipe.puts "Y"
+                end
                 if t == "Apple_HFS" then
                     @dev = d
-                    @volume = v
+                    @volume = v.chomp
                 end
             end
         end
