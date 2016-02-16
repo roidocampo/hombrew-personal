@@ -16,19 +16,22 @@ class Dmg
 
     def attach
         cmd = %w[hdiutil attach -nobrowse -readonly -noidme -mountrandom /tmp]
-        cmd.push(@dmg_path)
-        IO.popen(cmd, "r+") do |pipe|
-            while line = pipe.gets
+        cmd.push(@dmg_path.to_s)
+        Open3.popen2e(*cmd) do |proc_in, proc_out, x|
+            proc_in.puts "Y\n"
+            while line = proc_out.gets
+                puts line
                 d,t,v = line.split(/\s+/, 3)
-                if d == "Agree" then
-                    pipe.puts "Y"
-                end
                 if t == "Apple_HFS" then
                     @dev = d
                     @volume = v.chomp
                 end
             end
         end
+        puts
+        puts "HERE"
+        puts @dev
+        puts @volume
     end
 
     def detach
