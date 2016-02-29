@@ -12,6 +12,11 @@ class Macaulay2 < Formula
     sha1 'e59de37158008de0f9440b306c9490e1bfd182e0'
     version M2_VERSION
 
+    bottle do
+        root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
+        sha256 "133690a66994e904bfc3d62539ccc1e9f48e44d665671e287e06fe689b0c24e7" => :yosemite
+    end
+
     def install
         extract_dmg DMG_FILE, buildpath/'dmg'
         (prefix/'Macaulay2').install Dir[buildpath/'dmg/Macaulay2-*/*']
