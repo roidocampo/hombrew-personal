@@ -1,9 +1,9 @@
 class Singular < Formula
     desc "Singular -- A Computer Algebra System for Polynomial Computations"
     homepage "http://www.singular.uni-kl.de/"
-    url "https://github.com/Singular/Sources/archive/Release-4-0-3.tar.gz"
+    url "https://github.com/roidocampo/singular/archive/Release-4-0-3-20160229.tar.gz"
     version "4.0.3"
-    sha256 "037ac188da97d46306bf300c56f80d3ea9fe216913388315aef2e6944882c30d"
+    sha256 "c326964b369c17c709519eac856de23a1501da494034009887718031207ec027"
 
     depends_on "autoconf" => :build
     depends_on "autogen" => :build
@@ -20,9 +20,11 @@ class Singular < Formula
 
     def install
         system "./autogen.sh"
-        system "./configure", "--prefix=#{prefix}"
-        system "make"
-        system "make", "install"
+        mkdir "brewbuild" do
+            system "../configure", "--prefix=#{prefix}"
+            system "make"
+            system "make", "install"
+        end
     end
 
     test do
