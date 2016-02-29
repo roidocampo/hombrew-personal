@@ -4,11 +4,10 @@ class EvinceDjvu < Formula
   url "https://download.gnome.org/sources/evince/3.18/evince-3.18.2.tar.xz"
   sha256 "42ad6c7354d881a9ecab136ea84ff867acb942605bcfac48b6c12e1c2d8ecb17"
 
-  # bottle do
-  #   sha256 "a887a9eef887273b34e84a0c003a5d37a9a6f3464afa8bd32638fe00cc36c2b3" => :el_capitan
-  #   sha256 "a6b74c53788c92d7ea0d75f8d16a41c363f6a2622fda1c7b614dca0808fac408" => :yosemite
-  #   sha256 "69ecb87c7186689cfb4a0a1c7a6f8d12432985d8544ae75367fd74b5956745fe" => :mavericks
-  # end
+  bottle do
+    root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
+    sha256 "cab429616b34418b5bc410634ee05751ba3f1ec9b9ae337b59780cf9cd08bf04" => :yosemite
+  end
 
   depends_on "pkg-config" => :build
   depends_on "intltool" => :build
