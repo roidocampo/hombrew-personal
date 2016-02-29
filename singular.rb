@@ -6,6 +6,7 @@ class Singular < Formula
     sha256 "c326964b369c17c709519eac856de23a1501da494034009887718031207ec027"
 
     bottle do
+        root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
         sha256 "d483d750392b8a4c0c45ba7abececf73abda7dfad1db9714ab4b542b03d26e70" => :yosemite
     end
 
