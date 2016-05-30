@@ -1,4 +1,4 @@
-class TeXCompile < Formula
+class Texcompile < Formula
     desc "Simple script for compilation of TeX/LaTeX files"
     homepage "https://github.com/roidocampo/texcompile"
     url "https://github.com/roidocampo/texcompile/archive/v0.1.tar.gz"
