@@ -22,5 +22,16 @@ class JupyterBrowser < Formula
 
         system "make", "BUILD_DIR=#{prefix}"
 
+        (prefix/"etc/jupyter").mkpath
+
+        (prefix/"etc/jupyter/jupyter_notebook_config.py").write configfile
+
     end
+
+    def configfile; <<-EOS.undent
+        c = get_config()
+        c.NotebookApp.browser = u'open -a "#{prefix}/JupyterBrowser.app" %s'
+        EOS
+    end
+
 end
