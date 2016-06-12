@@ -6,9 +6,12 @@ class EvinceDjvu < Formula
 
   bottle do
     root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
-    revision 1
-    #sha256 "cab429616b34418b5bc410634ee05751ba3f1ec9b9ae337b59780cf9cd08bf04" => :yosemite
-    sha256 "62452f93ebb772169e6fcf7325057f14c1e09c3e7038bb6e43189a205d70873e" => :el_capitan
+    # revision 0
+    # sha256 "cab429616b34418b5bc410634ee05751ba3f1ec9b9ae337b59780cf9cd08bf04" => :yosemite
+    # revision 1
+    # sha256 "62452f93ebb772169e6fcf7325057f14c1e09c3e7038bb6e43189a205d70873e" => :el_capitan
+    revision 2
+    sha256 "fb084c5a5599e7fcc8ae3436c9e0e8b79980dce164b36d26494ca3805b715418" => :el_capitan
   end
 
   depends_on "pkg-config" => :build
@@ -16,6 +19,7 @@ class EvinceDjvu < Formula
   depends_on "itstool" => :build
   depends_on "poppler"
   depends_on "djvulibre"
+  #depends_on :tex # for dvi support (not working!)
   depends_on "libxml2" => "with-python"
   depends_on "gtk+3"
   depends_on "hicolor-icon-theme"
@@ -40,6 +44,7 @@ class EvinceDjvu < Formula
                           "--disable-schemas-compile",
                           "--enable-introspection",
                           "--disable-browser-plugin"
+                          #"--enable-dvi", # not working!
     ENV.append_path "PYTHONPATH", "#{Formula["libxml2"].opt_lib}/python2.7/site-packages"
     system "make", "install"
   end
