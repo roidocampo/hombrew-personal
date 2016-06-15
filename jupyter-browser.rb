@@ -1,9 +1,9 @@
 class JupyterBrowser < Formula
     desc "Viewer for Jupyter Notebooks based on nwjs.io"
     homepage "https://github.com/roidocampo/jupyter-browser"
-    url "https://github.com/roidocampo/jupyter-browser/archive/v0.1.tar.gz"
-    sha256 "892098052cb9fc8dbac48dd7170b97c0108da027f4d99169a61db29681258bea"
-    version "0.1"
+    url "https://github.com/roidocampo/jupyter-browser/archive/v0.2.tar.gz"
+    sha256 "57ad5d3cf0df2117536cf49fe430080135172245f8c0b12a3a788ab78cccb8e2"
+    version "0.2"
 
     resource "nwjs" do
         url "http://dl.nwjs.io/v0.15.2/nwjs-sdk-v0.15.2-osx-x64.zip"
