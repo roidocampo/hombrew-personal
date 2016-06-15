@@ -5,9 +5,10 @@ class Pulp < Formula
     sha256 "3dc35b882fb2e1d35add852e0207540d702206b2adc63790f1f203c32f66537c"
     version "0.4"
 
-    depends_on "evince-djvu"
     depends_on "python3"
-    depends_on "pygobject3"
+    depends_on "evince-djvu"
+    depends_on "pygobject3" => "with-python3"
+    depends_on "gtk-mac-integration"
 
     resource "Unidecode" do
         url "https://pypi.python.org/packages/source/U/Unidecode/Unidecode-0.04.19.tar.gz"
