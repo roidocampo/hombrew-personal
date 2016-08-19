@@ -3,12 +3,12 @@ require 'formula'
 class Normaliz < Formula
     homepage 'http://www.home.uni-osnabrueck.de/wbruns/normaliz/'
     url 'http://www.home.uni-osnabrueck.de/wbruns/normaliz/Normaliz2.10.1/Normaliz2.10.1MacOs.zip'
-    sha1 '829885a2fbd058356c51297d9bcc601c7795a2e6'
+    sha256 'bd36917e14248f296fff9661335309979a9744cc55cecb0e74fac09d418a3954'
     version '2.10.1'
 
     resource 'share' do
         url 'http://www.home.uni-osnabrueck.de/wbruns/normaliz/Normaliz2.10.1/Normaliz2.10.1.zip'
-        sha1 '4ca2da20b4887ae3ab9cbc453c784ccfb73879ce'
+        sha256 '94524d4592334ea1b083f795f39ae008aa3bd565e316f55387759074b27793af'
     end
 
     def install
