@@ -1,20 +1,20 @@
 require 'formula'
 require_relative 'lib/dmg'
 
-M2_VERSION = '1.7'
-MAC_VERSION = '10.10'
+M2_VERSION = '1.9.2'
+MAC_VERSION = '10.11.6'
 DMG_FILE = "Macaulay2-#{M2_VERSION}-x86_64-MacOS-#{MAC_VERSION}.dmg"
 
 class Macaulay2 < Formula
 
     homepage 'http://www.math.uiuc.edu/Macaulay2'
     url "http://www.math.uiuc.edu/Macaulay2/Downloads/MacOSX/#{DMG_FILE}"
-    sha1 'e59de37158008de0f9440b306c9490e1bfd182e0'
+    sha256 "0f32a4712865b333a5267a64cacdfdec839e025ba48b8a05b3b93738ebae4d01"
     version M2_VERSION
 
     bottle do
         root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
-        sha256 "133690a66994e904bfc3d62539ccc1e9f48e44d665671e287e06fe689b0c24e7" => :yosemite
+        sha256 "6053fc4e3a5e16e9123b2c553a8aa40070d03489e4b7504913c152e0ba8edec0" => :el_capitan
     end
 
     def install
