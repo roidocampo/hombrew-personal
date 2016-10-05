@@ -4,9 +4,10 @@ class Pulp < Formula
     url "https://github.com/roidocampo/pulp/archive/v0.6.tar.gz"
     sha256 "6c4e35299d00144be418e13648eadb32f136ede9f4e5e9b08f3f7199634cd6a5"
     version "0.6"
-    revision 1
+    revision 2
 
     depends_on "python3"
+    depends_on "py3cairo"
     #depends_on "evince-djvu"
     depends_on "evince"
     depends_on "pygobject3" => "with-python3"
