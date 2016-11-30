@@ -8,7 +8,8 @@ class Singular < Formula
 
     bottle do
         root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
-        sha256 "d483d750392b8a4c0c45ba7abececf73abda7dfad1db9714ab4b542b03d26e70" => :yosemite
+        rebuild 1
+        sha256 "2225ddfba1e724c30dd0565617599686b5051b43f722bb3f7ab347ad2f846e4b" => :el_capitan
     end
 
     depends_on "autoconf" => :build
