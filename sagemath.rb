@@ -4,12 +4,13 @@ class Sagemath < Formula
     homepage "http://www.sagemath.org"
     url "https://github.com/githubtraining/hellogitworld/archive/RELEASE_1.0.tar.gz"
     sha256 "76e3d0ac5f5b9043c42e26785005b4a1a6699131a94789c990f006439120001f"
-    version "7.2"
+    version "7.4"
 
     resource "sourcetar" do
-        url "http://mirrors.xmission.com/sage/osx/intel/sage-7.2-OSX_10.11.4-x86_64.tar.bz2"
-        sha256 "76a91202fef7fbba9725d914e72118eede4c29ef9d925d18c9d0cf185a5becda"
-        version "7.2"
+        url "http://mirrors.xmission.com/sage/osx/intel/sage-7.4-OSX_10.11.6-x86_64.tar.bz2"
+        # sha256 "76a91202fef7fbba9725d914e72118eede4c29ef9d925d18c9d0cf185a5becda"
+        sha256 "9189aaeeb9473166e9c8465c11b9ec24d6ad8c365774eef5f18fbcfa10d68917"
+        version "7.4"
     end
 
     def install
