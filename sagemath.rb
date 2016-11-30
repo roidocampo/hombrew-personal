@@ -8,7 +8,6 @@ class Sagemath < Formula
 
     resource "sourcetar" do
         url "http://mirrors.xmission.com/sage/osx/intel/sage-7.4-OSX_10.11.6-x86_64.tar.bz2"
-        # sha256 "76a91202fef7fbba9725d914e72118eede4c29ef9d925d18c9d0cf185a5becda"
         sha256 "9189aaeeb9473166e9c8465c11b9ec24d6ad8c365774eef5f18fbcfa10d68917"
         version "7.4"
     end
@@ -19,6 +18,9 @@ class Sagemath < Formula
                 r.verify_download_integrity(r.fetch)
                 system "tar", "xvf", r.cached_download
             end
+        end
+        inreplace prefix/"SageMath/sage" do |s|
+            s.sub! /#SAGE_ROOT=.*/, "SAGE_ROOT=\"#{prefix}/SageMath\""
         end
         cd prefix/"SageMath" do
             system "python", "relocate-once.py"
