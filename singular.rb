@@ -4,6 +4,7 @@ class Singular < Formula
     url "https://github.com/roidocampo/singular/archive/Release-4-0-3-20160229.tar.gz"
     version "4.0.3"
     sha256 "c326964b369c17c709519eac856de23a1501da494034009887718031207ec027"
+    revision 1
 
     bottle do
         root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
@@ -17,7 +18,7 @@ class Singular < Formula
     depends_on "readline" => :build
     depends_on "gmp" => :build
     depends_on "ntl" => :build
-    depends_on "flint" => :build
+    depends_on "homebrew/science/flint" => :build
     depends_on "mpfr" => :build
     depends_on "homebrew/science/glpk" => :build
     depends_on "homebrew/science/cddlib" => :build
