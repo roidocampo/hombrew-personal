@@ -22,6 +22,9 @@ class Sagemath < Formula
         inreplace prefix/"SageMath/sage" do |s|
             s.sub! /#SAGE_ROOT=.*/, "SAGE_ROOT=\"#{prefix}/SageMath\""
         end
+        inreplace prefix/"SageMath/local/bin/sage" do |s|
+            s.sub! /\n/, "\n\n#{sagebin_patch}\n"
+        end
         cd prefix/"SageMath" do
             system "python", "relocate-once.py"
         end
@@ -39,6 +42,14 @@ class Sagemath < Formula
         #!/bin/sh
         export SAGE_ROOT="#{prefix}/SageMath"
         exec "#{prefix}/SageMath/sage" "$@"
+        EOS
+    end
+
+    def sagebin_patch; <<-EOS.undent
+        if [ -z "$SAGE_ROOT" ];  then
+            SAGE_ROOT="#{prefix}/SageMath"
+            export SAGE_ROOT
+        fi
         EOS
     end
 
