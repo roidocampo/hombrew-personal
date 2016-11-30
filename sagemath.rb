@@ -5,6 +5,7 @@ class Sagemath < Formula
     url "https://github.com/githubtraining/hellogitworld/archive/RELEASE_1.0.tar.gz"
     sha256 "76e3d0ac5f5b9043c42e26785005b4a1a6699131a94789c990f006439120001f"
     version "7.4"
+    revision 1
 
     resource "sourcetar" do
         url "http://mirrors.xmission.com/sage/osx/intel/sage-7.4-OSX_10.11.6-x86_64.tar.bz2"
