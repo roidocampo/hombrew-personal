@@ -7,6 +7,8 @@ class Asir < Formula
 
     bottle do
         root_url 'https://raw.githubusercontent.com/roidocampo/homebrew-bottles/master'
+        rebuild 1
+        sha256 "06c69f4c3c21683240bdf889afa1c83f37e65082e4aa84648c103c440cc6481f" => :el_capitan
         sha256 "9eb71785f265c35042b1a98bab0caa3a45378cf24ab1a6163fa4fce79f977656" => :yosemite
     end
 
