@@ -1,9 +1,9 @@
 class Pulp < Formula
     desc "File viewer for MacOS (for pdf, ps, and djvu files)"
     homepage "https://github.com/roidocampo/pulp"
-    url "https://github.com/roidocampo/pulp/archive/v0.8.tar.gz"
-    sha256 "b85308c4239bcd427dfbb35e9dc766363e4ed9efe83e5aaf74f3185135c27866"
-    version "0.8"
+    url "https://github.com/roidocampo/pulp/archive/v0.9.1.tar.gz"
+    sha256 "c0f772fff2b0508133f83f42999ad92faf83f83cbf8bf3a1f5f6150e2a17406a"
+    version "0.9.1"
 
     depends_on "python3"
     depends_on "py3cairo"
