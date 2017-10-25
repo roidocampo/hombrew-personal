@@ -17,13 +17,13 @@ class Pulp < Formula
     end
 
     resource "PyObjC-Core" do
-        url "https://pypi.python.org/packages/7e/03/303a5c7f7c3d3af811eba44b32ef957e570be4d5c5b656c0b44ece6191e0/pyobjc-core-3.2.1.tar.gz"
-        sha256 "848163845921e5a61e069ea42bab06ac73278f5a09b4e9cedd6a3eac6712ff2c"
+        url "https://pypi.python.org/packages/b0/4f/93d8b4beac7b686c3f1a8f682062a9e65c87e5e45a99863ea7e4ba43813f/pyobjc-core-4.0.tar.gz"
+        sha256 "c132417a7122681d4b6841673970429fc423c81c702c58097b19c946bd9b35f7"
     end
 
     resource "PyObjC-Framework-Cocoa" do
-        url "https://pypi.python.org/packages/f2/91/9a1847a442a8cd9f7e7ed183561c57b8644fd582f7ede0c5c3dc81407533/pyobjc-framework-Cocoa-3.2.1.tar.gz"
-        sha256 "8215a528b552588f0024df03ef1c5f8edfa245301888c384f5b8c231f4c89431"
+        url "https://pypi.python.org/packages/a7/8d/fc2b9d569ba23775724849eeed39a53665b3b1058eac00c3d3ac3a54e3cc/pyobjc-framework-Cocoa-4.0.tar.gz"
+        sha256 "851f95ba957ee2ab3b8f2b24dec18aa94a614bd056fa15439154ff1819f4b70e"
     end
 
     def install
