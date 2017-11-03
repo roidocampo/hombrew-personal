@@ -1,13 +1,16 @@
 class Texcompile < Formula
     desc "Simple script for compilation of TeX/LaTeX files"
     homepage "https://github.com/roidocampo/texcompile"
-    url "https://github.com/roidocampo/texcompile/archive/v0.4.tar.gz"
-    sha256 "2acc8698bc48a7ccd60ec7e272e3d1b818624c7aac91c17b1106ac84b8df5859"
-    version "0.4"
+    url "https://github.com/roidocampo/texcompile/archive/v0.5.tar.gz"
+    sha256 "c0aefcbf6305c43a0fd8c989235a724ba08be22d17e1ad20ef347bed640a22f6"
+    version "0.5"
 
-    depends_on "python3"
+    depends_on :python3
+
+    include Language::Python::Virtualenv
 
     def install
-        system "make", "install", "PREFIX=#{prefix}"
+        virtualenv_install_with_resources
+        man1.install "docs/texcompile.1"
     end
 end
