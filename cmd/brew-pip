@@ -1,0 +1,46 @@
+#!/bin/bash
+
+PYTHON=/usr/local/bin/python3
+PIP=/usr/local/bin/pip3
+PIPDIR=~/.personal_pip_dir
+PIP_ARGS=()
+SUPPORTED=yes
+
+while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+        install)
+            PIP_ARGS+=("install")
+            PIP_ARGS+=("--prefix=$PIPDIR")
+            shift
+            ;;
+        list)
+            PIP_ARGS+=("list")
+            PIP_ARGS+=("--format=columns")
+            shift
+            ;;
+        *)
+            PIP_ARGS+=("$key")
+            shift
+            ;;
+    esac
+done
+
+if [ ! -x "$PYTHON" ]; then
+    echo ERROR: python3 not found
+    echo Please excute \`brew install python3\'
+    exit
+fi
+
+if [ ! -x "$PIP" ]; then
+    echo ERROR: pip3 not found
+    echo Please excute \`brew install python3\'
+    exit
+fi
+
+if [ -z "$SUPPORTED" ]; then
+    echo ERROR: sorry, your command is not supported yet
+    exit
+fi
+
+exec "$PIP" "${PIP_ARGS[@]}"
