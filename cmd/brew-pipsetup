@@ -63,8 +63,8 @@ done
 
 PYTHON_VER=`"$PYTHON" -c "import sys; print(sys.version[:3])"`
 
-ln -f -s "$PIPDIR/bin/python" "/usr/local/bin/python3"
-ln -f -s "$PIPDIR/bin/python3" "/usr/local/bin/python3"
+ln -f -s "/usr/local/bin/python3" "$PIPDIR/bin/python"
+ln -f -s "/usr/local/bin/python3" "$PIPDIR/bin/python3"
 ln -f -s "$PIPDIR/lib/python$PYTHON_VER" "$PIPDIR/lib/python"
 
 for PIP_FILE in pip pip2 pip3; do
