@@ -43,4 +43,7 @@ if [ -z "$SUPPORTED" ]; then
     exit
 fi
 
+PYTHONPATH="$PIPDIR/lib/python/site-packages"
+export PYTHONPATH
+
 exec "$PIP" "${PIP_ARGS[@]}"
