@@ -8,6 +8,7 @@ PACKAGES=(
     ipython
     jupyter
     jupyterlab
+    sjk
 )
 
 PYTHON=/usr/local/bin/python3
