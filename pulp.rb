@@ -42,7 +42,7 @@ class Pulp < Formula
     end
 
     def python_setup_install_args(py_prefix)
-        shim = <<-EOS.undent
+        shim = <<~EOS
             import setuptools, tokenize
             __file__ = 'setup.py'
             exec(compile(getattr(tokenize, 'open', open)(__file__).read()
