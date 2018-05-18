@@ -14,7 +14,7 @@ class Forteatoo < Formula
     end
 
     depends_on 'gmp' => :build
-    depends_on 'homebrew/science/glpk' => :build
+    depends_on 'glpk' => :build
 
     def install
         system "./configure", "--prefix=#{prefix}"
