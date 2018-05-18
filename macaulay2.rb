@@ -23,7 +23,7 @@ class Macaulay2 < Formula
         (bin/'M2').write script
     end
 
-    def script; <<-EOS.undent
+    def script; <<~EOS
         #!/bin/sh
         exec "#{prefix}/Macaulay2/bin/M2" "$@"
         EOS

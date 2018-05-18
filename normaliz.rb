@@ -18,7 +18,7 @@ class Normaliz < Formula
         (bin/'nmzIntegrate').write script('nmzIntegrate')
     end
 
-    def script(name); <<-EOS.undent
+    def script(name); <<~EOS
         #!/bin/sh
         exec "#{share}/normaliz/2.10.1/#{name}" "$@"
         EOS

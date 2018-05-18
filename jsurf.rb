@@ -14,7 +14,7 @@ class Jsurf < Formula
         (bin/'jsurf').write script
     end
 
-    def script; <<-EOS.undent
+    def script; <<~EOS
         #!/bin/sh
         exec "#{prefix}/jsurf/bin/jsurf" "$@"
         EOS

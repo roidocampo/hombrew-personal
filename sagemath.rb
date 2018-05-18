@@ -39,14 +39,14 @@ class Sagemath < Formula
         (jupyter_share/'nbextensions').install_symlink (jupyter_orig/"nbextensions/mathjax")
     end
 
-    def script; <<-EOS.undent
+    def script; <<~EOS
         #!/bin/sh
         export SAGE_ROOT="#{prefix}/SageMath"
         exec "#{prefix}/SageMath/sage" "$@"
         EOS
     end
 
-    def sagebin_patch; <<-EOS.undent
+    def sagebin_patch; <<~EOS
         if [ -z "$SAGE_ROOT" ];  then
             SAGE_ROOT="#{prefix}/SageMath"
             export SAGE_ROOT
