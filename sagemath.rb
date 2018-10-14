@@ -36,6 +36,9 @@ class Sagemath < Formula
         (jupyter_share/'kernels').install_symlink (jupyter_orig/"kernels/sagemath")
         (jupyter_share/'nbextensions').install_symlink (jupyter_orig/"nbextensions/jsmol")
         (jupyter_share/'nbextensions').install_symlink (jupyter_orig/"nbextensions/mathjax")
+        inreplace (jupyter_orig/"kernels/sagemath/kernel.json") do |s|
+            s.sub! "SageMath ", "Sage "
+        end
     end
 
     def script; <<~EOS
