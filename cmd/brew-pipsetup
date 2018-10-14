@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
+    psutil
     numpy
     matplotlib
     scipy
@@ -8,13 +9,25 @@ PACKAGES=(
     ipython
     jupyter
     jupyterlab
+    ipywidgets
     sjk
+    PySingular
+    jupyter_kernel_singular
+    jupyterlab_latex
+)
+
+LABEXTENSIONS=(
+    "@jupyter-widgets/jupyterlab-manager"
+    "@mflevine/jupyterlab_html"
+    "@jupyterlab/latex"
 )
 
 PYTHON=/usr/local/bin/python3
 PIP=/usr/local/bin/pip3
 PIPDIR=~/.personal_pip_dir
 PIP_ARGS=()
+NODEJS=/usr/local/bin/node
+JUPYTER=$PIPDIR/bin/jupyter
 
 while [[ $# -gt 0 ]]; do
     key="$1"
@@ -44,6 +57,12 @@ fi
 if [ ! -x "$PIP" ]; then
     echo ERROR: pip3 not found
     echo Please excute \`brew install python\'
+    exit
+fi
+
+if [ ! -x "$NODEJS" ]; then
+    echo ERROR: node not found
+    echo Please excute \`brew install node\'
     exit
 fi
 
@@ -83,3 +102,37 @@ echo To upgrade pip itself, use: brew pipsetup upgrade
 EOF
 chmod +x "$PIPDIR/bin/$PIP_FILE"
 done
+
+export JUPYTER_PATH=$PIPDIR/share/jupyter
+export JUPYTERLAB_DIR=$PIPDIR/share/jupyter/lab
+for EXT in "${LABEXTENSIONS[@]}"; do
+    "$JUPYTER" labextension install "$EXT"
+done
+
+# Patch sjk and jupyter_kernel_singular
+
+for SJK_KER in singular mathematica; do
+    SJK_SPEC="$PIPDIR/share/jupyter/kernels/sjk-$SJK_KER/kernel.json"
+    if [ -f "$SJK_SPEC" ]; then
+        mv -f "$SJK_SPEC" "$SJK_SPEC.disabled"
+    fi
+done
+
+cat > "$PIPDIR/bin/gap" << 'EOF'
+#!/bin/bash
+sage -gap "$@"
+EOF
+chmod +x "$PIPDIR/bin/gap"
+
+cat > "$PIPDIR/share/jupyter/kernels/singular/kernel.json" << 'EOF'
+{
+    "argv": [
+        "python3",
+        "-m", "jupyter_kernel_singular",
+        "-f", "{connection_file}"
+    ],
+    "codemirror_mode": "singular",
+    "display_name": "Singular",
+    "language": "singular"
+}
+EOF
