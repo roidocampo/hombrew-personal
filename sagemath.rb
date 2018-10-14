@@ -47,6 +47,8 @@ class Sagemath < Formula
     end
 
     def sagebin_patch; <<~EOS
+        unset PYTHONPATH
+
         if [ -z "$SAGE_ROOT" ];  then
             SAGE_ROOT="#{prefix}/SageMath"
             export SAGE_ROOT
