@@ -13,13 +13,13 @@ PACKAGES=(
     sjk
     PySingular
     jupyter_kernel_singular
-    jupyterlab_latex
+    # jupyterlab_latex
 )
 
 LABEXTENSIONS=(
     "@jupyter-widgets/jupyterlab-manager"
     "@mflevine/jupyterlab_html"
-    "@jupyterlab/latex"
+    # "@jupyterlab/latex"
 )
 
 PYTHON=/usr/local/bin/python3
