@@ -1,10 +1,9 @@
 class Texcompile < Formula
     desc "Simple script for compilation of TeX/LaTeX files"
     homepage "https://github.com/roidocampo/texcompile"
-    url "https://github.com/roidocampo/texcompile/archive/v0.5.tar.gz"
-    sha256 "c0aefcbf6305c43a0fd8c989235a724ba08be22d17e1ad20ef347bed640a22f6"
-    version "0.5"
-    revision 1
+    url "https://github.com/roidocampo/texcompile/archive/v0.5.1.tar.gz"
+    sha256 "155ee49fa20bf414ede1ec9c24473796b769cd4d8cb6c80e78e1ecfc2248655c"
+    version "0.5.1"
 
     depends_on "python3"
 
