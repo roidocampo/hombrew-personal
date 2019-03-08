@@ -17,6 +17,7 @@ PACKAGES=(
     sjk
     PySingular
     jupyter_kernel_singular
+    appmode
     # jupyterlab_latex
 )
 
@@ -141,6 +142,9 @@ done
 
 export JUPYTER_PATH=$PIPDIR/share/jupyter
 export JUPYTERLAB_DIR=$PIPDIR/share/jupyter/lab
+
+"$JUPYTER" nbextension     enable --py --sys-prefix appmode
+"$JUPYTER" serverextension enable --py --sys-prefix appmode
 
 for EXT in "${LABEXTENSIONS[@]}"; do
     "$JUPYTER" labextension install "$EXT"
